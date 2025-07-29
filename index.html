@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>מעקב האימון שלי</title>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+        <!-- Manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Icon -->
+    <link rel="icon" href="icons/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#222222" />
+
+    <!-- Service Worker -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("service-worker.js")
+                    .then(reg => console.log("Service worker registered!", reg))
+                    .catch(err => console.error("SW registration failed", err));
+            });
+        }
+    </script>
+
+</head>
+<body>
+    <div class="header">
+        <h1>האימון שלי</h1>
+        <p>עוקב אחרי ההתקדמות שלי בסטייל</p>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+
+    <div class="stats-summary">
+        <h3 style="color: #1db954; margin-bottom: 15px;">סיכום האימון</h3>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number" id="completedSets">0</span>
+                <span class="stat-label">סטים הושלמו</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="totalSets">24</span>
+                <span class="stat-label">סה"כ סטים</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="completionRate">0%</span>
+                <span class="stat-label">אחוז השלמה</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="workout-container" id="workoutContainer"></div>
+
+    <div id="popup" class="popup-overlay" style="display:none;">
+      <div class="popup-content">
+        <p id="popup-message"></p>
+      </div>
+    </div>
+
+    <div id="rest-timer" class="rest-timer" style="display: none;">
+        <span id="rest-countdown">30</span> ⏳
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
