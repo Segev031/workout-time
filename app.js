@@ -1,11 +1,11 @@
 const exercises = [
-	{ name: "האק סקוואט", sets: 3, reps: 8, weight: "15 קילו", icon: "🏋️" },
-	{ name: "כפיפת ברכיים במכשיר סלקטור ייעודי", sets: 3, reps: 10, weight: "38 קילו", icon: "🦵" },
+	{ name: "האק סקוואט", sets: 3, reps: 8, weight: "10 קילו", icon: "🏋️" },
+	{ name: "כפיפת ברכיים במכשיר סלקטור ייעודי", sets: 3, reps: 10, weight: "32 קילו", icon: "🦵" },
 	{ name: "לחיצת חזה", sets: 3, reps: 8, weight: "27 קילו", icon: "💪" },
 	{ name: "משיכת מוט לחזה כנגד פולי עליון", sets: 3, reps: 10, weight: "27 קילו", icon: "🔙" },
 	{ name: "הרחקת כתפיים", sets: 3, reps: 10, weight: "5 קילו", icon: "🤲" },
 	{ name: "כפיפת מרפקים כנגד משקולות", sets: 3, reps: 7, weight: "5 קילו", icon: "💪" },
-	{ name: "פשיטת מרפקים", sets: 3, reps: 20, weight: "20 קילו", icon: "🔥" },
+	{ name: "פשיטת מרפקים", sets: 3, reps: 10, weight: "18 קילו", icon: "🔥" },
 	{ name: "כפיפות בטן בשיפוע", sets: 3, reps: 12, weight: "", icon: "🔥" },
 ];
 
@@ -133,7 +133,7 @@ function toggleSet(setId, exerciseIndex) {
 		completedSets.add(setId);
 		showEncouragementPopup(exerciseIndex);
 		setTimeout(() => {
-			startRestTimer(27)
+			startRestTimer(87)
 		}, 3000); // ⏱️ מופעל בכל סימון סט
 	}
 
@@ -223,7 +223,7 @@ function closePopup() {
 // ⏱️ פונקציית טיימר מנוחה
 let restInterval = null;
 
-function startRestTimer(seconds = 27) {
+function startRestTimer(seconds = 87) {
 	clearInterval(restInterval);
 	const timerBox = document.getElementById("rest-timer");
 	const countdown = document.getElementById("rest-countdown");
